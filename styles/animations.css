@@ -12,3 +12,114 @@
 
 Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
 */
+
+.theme-menu__button:focus-visible:after {
+    transition: width 0.3s ease;
+    transform: scale(1);
+}
+
+.theme-menu__button::after {
+  transition: width 0.3s ease;
+}
+
+.button-save:hover::before {
+    transition: transform 0.5s ease-in-out;
+}
+
+.dialog-button:hover::before{
+  transition: transform 0.5s ease-in-out;
+}
+
+.like-icon:hover .like-icon-main-body {
+    fill: var(--heart-main-body-color);
+    transition: fill 0.3s 0.05s linear;
+  }
+  
+  .like-icon:hover .like-icon-core {
+    fill: var(--heart-main-body-color);
+    transition: fill 0.3s 0.05s linear;
+  }
+
+  .like-icon:active .like-icon-main-body {
+    fill: var(--heart-active);
+    transition: fill 0.3s 0.05s linear;
+  }
+
+  .like-icon-core {
+    transition: fill 0.3s 0.06 linear;
+  }
+
+  .like-icon-heart {
+    transition: fill 0.3s 0.06 linear;
+  }
+
+  .like-icon-main-body {
+    transition: fill 0.3s 0.06 linear;
+  }
+
+  .like-icon:active .like-icon-core {
+    fill: var(--heart-active);
+    transition: fill 0.3s 0.05s linear;
+  }
+
+  .like-icon.is-liked .like-icon-main-body {
+    fill: var(--heart-active);
+  }
+
+  .like-icon.is-liked .like-icon-core {
+    fill: var(--heart-active);
+  }
+
+  .like-icon.is-liked .like-icon-contour {
+    fill: var(--heart-active);
+  }
+
+  .like-icon.is-liked .like-icon-heart {
+    animation: scaleHeart 0.3s ease-in 0.1s 1;
+}
+
+.like-icon.is-liked .like-icon-sparks {
+    fill: var(--heart-active);
+    animation: sparksAnimation 0.3s ease-in 0.3s 1;
+}
+  
+
+@keyframes header_triangle {
+    0% {
+        transform: translateX(-150%);
+    }
+
+    100% {
+        transform: translateX(-150%) translateX(4px);
+    }
+}
+
+@keyframes scaleHeart {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.5);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes sparksAnimation {
+
+    0%,
+    100% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}

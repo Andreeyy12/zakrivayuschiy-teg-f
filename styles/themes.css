@@ -4,3 +4,49 @@
 ✦ theme-light — класс светлой темы
 ✦ не забудьте описать стили для изменения темы через медизапрос пользовательских предпочтений
 */
+
+
+
+@media (prefers-color-scheme: light) {
+    :root.theme-light {
+        --header-title: #000;
+        --border-section: #000;
+        --themes-background: #fff;
+        --background-color: #fff;
+        --icon-menu: #000;
+        --background-button-hover: #000;
+        --text-button: #fff;
+        --heart-contur: #000;
+        --disket-fill: #000;
+        --triangle-menu: #000;
+        --background-gradient: #d3d3d3;
+        --main-gradient-up:#e7e7e7;
+        --main-gradient-down:#1a1a1a;
+        --heart-main-body-color:#000;
+        --heart-contour-start: #000;
+        --heart-active: #ff0000;
+        --stroke-color:#fff;
+        --font-weight-light: 400;
+    }}
+
+    @media (prefers-color-scheme: dark) {
+    :root.theme-dark {
+        --header-title: #00CC14;
+        --border-section: #00CC14;
+        --themes-background: #000;
+        --background-color: #000;
+        --icon-menu: #00CC14;
+        --background-button-hover: #000;
+        --text-button: #00CC14;
+        --heart-contur: #00CC14;
+        --disket-fill: #00CC14;
+        --triangle-menu: #00cc14;
+        --background-gradient: #000;
+        --main-gradient-up:#007f0c;
+        --main-gradient-down:#004306;
+        --heart-main-body-color:#00cc14;
+        --heart-contour-start: #00cc14;
+        --heart-active: #ff0000;
+        --stroke-color:#000;
+        --font-weight-light: 465;
+     }}

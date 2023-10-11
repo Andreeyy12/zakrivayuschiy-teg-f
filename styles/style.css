@@ -17,4 +17,534 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  background-color: var(--themes-background);
+  background-image: repeating-linear-gradient(90deg, transparent, var(--background-gradient) 2px),
+  repeating-linear-gradient(1800deg, transparent, var(--background-gradient) 2px),
+  linear-gradient(180deg, var(--main-gradient-up) 0%, var(--main-gradient-down) 100%);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100vb;
+}
+
+.header {
+  width: clamp(375px, 100vw, 700px);
+  height: clamp(327px, 50vw, 368px);
+  background-color: var(--background-color);
+  margin: 100px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 136px;
+  padding-bottom: 25px;
+  border: 2px solid var(--border-section);
+}
+
+.header-title {
+  color: var(--header-title);
+  font-family: var(--main-font-family);
+  font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+  font-weight: 400;
+  line-height: 65px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.header-title-description {
+  font-family: var(--main-font-family);
+  font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
+  font-weight: 400;
+  line-height: 23px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: var(--header-title);
+  padding-top: 20px;
+  padding-bottom: 25px;
+  text-transform: uppercase;
+}
+
+.theme-menu__list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-left: 14px;
+}
+
+.theme-menu {
+  font-family: var(--main-font-family);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 14px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: var(--header-title);
+}
+
+.theme-menu__button {
+  position: relative;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.theme-menu__button::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  transform-origin: left;
+  width: 0%;
+  height: 2px;
+  background-color: var(--triangle-menu);
+  transform: scaleX(0);
+}
+
+.theme-menu__button:focus {
+  outline: none;
+  opacity: 0.6;
+}
+
+.theme-menu__button:focus-visible:after {
+  transform: scaleX(1);
+  width: 100%;
+  opacity: 0.6;
+  transition: width 0.3s ease;
+}
+
+.theme-menu__button:active {
+  opacity: 0.6;
+}
+
+.theme-menu__button:hover {
+  opacity: 0.6;
+}
+
+.theme-menu__button:disabled::before {
+  content: '▶';
+  color: var(--icon-menu);
+  position: absolute;
+  transform: translateX(-150%);
+  animation: header_triangle 0.5s infinite alternate ease-in-out;
+}
+
+.main {
+display: flex;
+flex-direction: column;
+gap: 55px;
+}
+
+.card {
+  width: clamp(375px, 100vw, 696px);
+  background-color: var(--background-color);
+  border: 2px solid var(--border-section);
+  display: flex;
+  margin: auto;
+  flex-direction: column;
+  position: relative;
+}
+
+.card-title {
+  font-family: var(--description-font);
+  font-size: 18px;
+  font-weight: 785;
+  line-height: 22px;
+  letter-spacing: 0em;
+  text-align: left;
+  font-variation-settings: 'slnt' 0;
+  color: var(--header-title);
+  padding: 3px 10px;
+}
+
+.card-image {
+  width: 100%;
+  object-fit: cover;
+  overflow: hidden;
+  position: relative;
+  border-bottom: 2px solid var(--border-section);
+  border-top: 2px solid var(--border-section);
+}
+
+.card-image-car {
+ width: 100%;
+ object-fit: cover;
+}
+
+.card-description {
+  display: flex;
+  flex-direction: column;
+  gap: 27px;
+  padding: 25px 25px;
+}
+
+.card-description-text {
+  font-family: var(--description-font);
+  font-size: 18px;
+  font-weight: var(--font-weight-light);
+  line-height: 21px;
+  letter-spacing: 0em;
+  text-align: left;
+  font-variation-settings: 'slnt' 0;
+  color: var(--header-title);
+}
+
+.card-button-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  margin-block-end: 23px;
+  padding-right: 23px;
+  gap: 12px;
+}
+
+.card__like-button {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 130px;
+  max-height: 36px;
+  border: 2px solid var(--border-section);
+  overflow: hidden;
+  background-color: var(--background-color); 
+  z-index: 0;
+  font-family: var(--main-font-family);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 13px;
+  letter-spacing: 0em;
+  cursor: pointer;
+}
+
+.button__text {
+  padding-block: 11px;
+  font-size: 14px;
+  line-height: 0.9;
+  z-index: 2;
+  color: var(--text-button);
+  mix-blend-mode: difference;
+}
+
+.card__like-button::before {
+  content: "";
+	position: absolute;
+	width: 100%;
+	height: 100%;
+  translate: -100%;
+  transition: all 0.5s ease-in-out;
+  background-color:  var(--background-button-hover); 
+  z-index: 1;
+}
+
+.card__like-button:hover::before {
+  translate: 0%;
+}
+
+.card__icon-button {
+  border: none;
+  background: none;
+  max-width: 38px;
+  width: 100%;
+  height: 100%;
+  max-height: 38px;
+  cursor: pointer;
+  transform: translateY(2px);
+}
+
+.card__icon-button:focus {
+  outline: none;
+}
+
+.card__icon-button:focus-visible {
+  border: 2px solid var(--border-section);
+}
+
+.card__like-button:focus {
+  outline: none;
+  box-shadow: 2px 2px 0 0 #000;
+}
+
+.like-icon-contour {
+  fill: var(--heart-contour-start);
+}
+
+.like-icon-heart {
+  transform-origin: 50%;
+}
+
+.like-icon-sparks {
+  fill: var(--heart-active);
+  opacity: 0;
+}
+
+.card-image-text {
+  color: var(--border-section);
+  position: absolute;
+  opacity: 0.5;
+  mix-blend-mode: hard-light;
+  top: 27px;
+  right: 25px;
+  font-family: var(--main-font-family);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: uppercase;
+  -webkit-text-stroke: 1px var(--stroke-color);
+  z-index: 2;
+}
+
+.card-image-car-saturate {
+  filter: saturate(75%);
+}
+
+.card-image-car-blur {
+  filter: blur(10px);
+}
+
+.card-image-car-contrast {
+ filter: contrast(180%);
+}
+
+.card-image-car-grayscale {
+  filter: grayscale(50%) contrast(50%);
+}
+
+.card-image-car-sepia {
+  filter: sepia(100%);
+}
+
+.card-image-car-invert {
+  filter: invert(100%);
+}
+
+.card-image-car-mix{
+  filter: contrast(80%) saturate(10%) invert(100%);
+}
+
+.card-image-car-brightness {
+  filter: brightness(50%);
+}
+
+.footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-block-start: 52px;
+  margin-block-end: 105px;
+}
+
+.button-save {
+  position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--background-color);
+    border: 2px solid var(--border-section);
+    padding: 15px 12px 15px 12px;
+    max-width: 335px;
+    width: 100%;
+    height: 100%;
+    max-height: 55px;
+    overflow: hidden;
+    margin-block-end: 103px;
+    color: var(--header-title);
+    font-family: var(--main-font-family);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 90%;
+    cursor: pointer;
+    gap: 8px;
+}
+
+.button-save::before {
+  content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: var(--background-button-hover);
+    mix-blend-mode: difference;
+    color: var(--text-button);
+}
+
+.button-save:hover::before {
+  content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: var(--background-color);
+    mix-blend-mode: difference;
+    color: var(--text-button);
+    transform: translateX(100%);
+}
+
+#disket-fill path {
+  fill: var(--disket-fill);
+}
+
+#dialog {
+  display: none;
+  position: fixed;
+  z-index: 3;
+  inset: 0;
+}
+
+#dialog[open] {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: none;
+  border: none;
+}
+
+.dialog-body {
+  display: flex;
+  flex-direction: column;
+  width: clamp(341px, 50vw, 357px);
+  background: var(--background-color);
+  border: 2px solid var(--border-section);
+  padding: 30px;
+  gap: 30px;
+}
+
+.dialog-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+  max-height: 63px;
+  width: 283px;
+  gap: 20px;
+}
+
+.disket-dialog {
+  width: 100%;
+  height: 100%;
+  max-width: 39px;
+  min-height: 39px;
+}
+
+.disket-dialog {
+  fill: var(--disket-fill);
+}
+
+.dialog-title-text {
+  color: var(--header-title);
+  font-family: 'PressStart2P';
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 21px */
+  text-transform: uppercase;
+}
+
+.dialog-button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dialog-button {
+  min-width: 293px;
+  width: 100%;
+  padding: 9px 17px;
+  background: none;
+  color: var(--header-title);
+  font-family: 'PressStart2P';
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 90%; 
+  text-transform: uppercase;
+  border: 2px solid var(--border-section);
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+  overflow: hidden;
+  }
+
+  .dialog-button::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -100%;
+    max-width: 293px;
+    width: 100%;
+    height: 35px;
+    transition: all 0.5s ease-in-out;
+    background-color: var(--background-color);
+  }
+  
+.dialog-button:hover::before{
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -100%;
+    max-width: 293px;
+    width: 100%;
+    height: 35px;
+    transition: all 0.5s ease-in-out;
+    background-color: var(--background-button-hover);
+    color: var(--header-title);
+    transform: translateX(100%);
+    mix-blend-mode: difference;
+}
+
+@media screen and (max-width: 375px) {
+  .header {
+    padding-top: 116px;
+  }
+
+  .header-title-description {
+    padding-top: 10px;
+    padding-bottom: 20px;
+  }
+
+  .card {
+    min-height: 723px;
+  }
+
+  .card-description {
+    max-width: 360px;
+  }
+
+  .card-image-text {
+    right: 13px;
+  }
+
+  .main {
+    gap: 50px;
+  }
+
+  
+  .button-save {
+    flex-direction: column;
+    max-width: 306px;
+    max-height: 80px;
+  }
+
+  .button-save svg {
+    max-width: 28px;
+    max-height: 28px;
+  }
+
+  .dialog-title {
+    width: 257px;
+  }
+
+  .dialog-body {
+    align-items: center;
+  }
+
+  .dialog-button {
+    min-width: 257px;
+  }
 }
