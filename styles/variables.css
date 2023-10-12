@@ -1,28 +1,6 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
 
-:root.theme-dark {
-  --header-title: #00CC14;
-  --border-section: #00CC14;
-  --themes-background: #000;
-  --background-color: #000;
-  --icon-menu: #00CC14;
-  --background-button-hover: #000;
-  --text-button: #00CC14;
-  --heart-contur: #00CC14;
-  --disket-fill: #00CC14;
-  --triangle-menu: #00cc14;
-  --background-gradient: #000;
-  --main-gradient-up:#007f0c;
-  --main-gradient-down:#004306;
-  --heart-main-body-color:#00cc14;
-  --heart-contour-start: #00cc14;
-  --heart-active: #ff0000;
-  --stroke-color:#000;
-  --main-font-family: 'PressStart2P', 'monospace';
-  --description-font: 'Inter', 'monospace';
-  }
-
-  :root.theme-light {
+  :root {
     --header-title: #000;
         --border-section: #000;
         --themes-background: #fff;
@@ -40,8 +18,8 @@
         --heart-contour-start: #000;
         --heart-active: #ff0000;
         --stroke-color:#fff;
-        --main-font-family: 'PressStart2P', 'monospace';
-        --description-font: 'Inter', 'monospace';
+        --main-font-family: 'PressStart2P', 'fantasy';
+        --description-font: 'Inter-Variable', 'monospace';
         --font-weight-light: 400;
   }
 

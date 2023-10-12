@@ -22,6 +22,10 @@
   transition: width 0.3s ease;
 }
 
+.card__like-button:focus-visible {
+  transition: box-shadow 0.3s ease;
+}
+
 .button-save:hover::before {
     transition: transform 0.5s ease-in-out;
 }
@@ -30,14 +34,18 @@
   transition: transform 0.5s ease-in-out;
 }
 
+.button-save:focus-visible {
+  transition: box-shadow 0.3s ease;
+}
+
 .like-icon:hover .like-icon-main-body {
     fill: var(--heart-main-body-color);
-    transition: fill 0.3s 0.05s linear;
+    transition: fill 0.5s 0.05s linear;
   }
   
   .like-icon:hover .like-icon-core {
     fill: var(--heart-main-body-color);
-    transition: fill 0.3s 0.05s linear;
+    transition: fill 0.5s 0.05s linear;
   }
 
   .like-icon:active .like-icon-main-body {
@@ -46,15 +54,15 @@
   }
 
   .like-icon-core {
-    transition: fill 0.3s 0.06 linear;
+    transition: fill 0.3s 0.05s linear;
   }
 
   .like-icon-heart {
-    transition: fill 0.3s 0.06 linear;
+    transition: fill 0.3s 0.05s linear;
   }
 
   .like-icon-main-body {
-    transition: fill 0.3s 0.06 linear;
+    transition: fill 0.3s 0.05s linear;
   }
 
   .like-icon:active .like-icon-core {
