@@ -5,6 +5,31 @@
 ✦ не забудьте описать стили для изменения темы через медизапрос пользовательских предпочтений
 */
 
+:root.theme-dark {
+    --header-title: #00CC14;
+    --border-section: #00CC14;
+    --themes-background: #000;
+    --background-color: #000;
+    --icon-menu: #00CC14;
+    --background-button-hover: #00CC14;
+    --text-button: #00CC14;
+    --heart-contur: #00CC14;
+    --disket-fill: #00CC14;
+    --triangle-menu: #00cc14;
+    --background-gradient: #000;
+    --main-gradient-up:#007f0c;
+    --main-gradient-down:#004306;
+    --heart-main-body-color:#00cc14;
+    --heart-contour-start: #00cc14;
+    --heart-active: #ff0000;
+    --stroke-color:#000;
+    --main-font-family: 'PressStart2P', 'fantasy';
+    --description-font: 'Inter-Variable', 'monospace';
+    --font-weight-light: 465;
+    --font-weight-title: 785;
+    --background-color-hover: #00cc14;
+ }
+
 :root.theme-light {
     --header-title: #000;
     --border-section: #000;
@@ -26,6 +51,8 @@
     --main-font-family: 'PressStart2P', 'fantasy';
     --description-font: 'Inter-Variable', 'monospace';
     --font-weight-light: 400;
+    --font-weight-title: 700;
+    --background-color-hover: #000;
 }
 
 @media (prefers-color-scheme: light) {
@@ -50,28 +77,5 @@
         --main-font-family: 'PressStart2P', 'fantasy';
         --description-font: 'Inter-Variable', 'monospace';
         --font-weight-light: 400;
+        --font-weight-title: 700;
     }}
-
-    @media (prefers-color-scheme: dark) {
-    :root {
-        --header-title: #00CC14;
-        --border-section: #00CC14;
-        --themes-background: #000;
-        --background-color: #000;
-        --icon-menu: #00CC14;
-        --background-button-hover: #00CC14;
-        --text-button: #00CC14;
-        --heart-contur: #00CC14;
-        --disket-fill: #00CC14;
-        --triangle-menu: #00cc14;
-        --background-gradient: #000;
-        --main-gradient-up:#007f0c;
-        --main-gradient-down:#004306;
-        --heart-main-body-color:#00cc14;
-        --heart-contour-start: #00cc14;
-        --heart-active: #ff0000;
-        --stroke-color:#000;
-        --main-font-family: 'PressStart2P', 'fantasy';
-        --description-font: 'Inter-Variable', 'monospace';
-        --font-weight-light: 465;
-     }}
